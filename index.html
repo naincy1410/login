@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login V6</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100 p-t-85 p-b-20">
+				<form class="login100-form validate-form" method="post" action="#" onsubmit="return Validation()" >
+					<span class="login100-form-title p-b-70">
+						Welcome
+					</span>
+					<span class="login100-form-avatar">
+						<img src="Kanan_International_Karnal.png" alt="AVATAR">
+					</span>
+
+					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Enter username">
+						<input class="input100" type="text" name="username" id="username" required>
+						<span class="focus-input100" data-placeholder="Username"></span>
+						<span id="lbltext" style="color:red;"></span>
+					</div>
+					
+
+					<div class="wrap-input100 validate-input m-b-50" data-validate="Enter password" >
+						<input class="input100" type="password" name="pass" id="password" required>
+						<span class="focus-input100" data-placeholder="Password"></span>
+						<span id="message" style="color:red;"></span>
+					</div>
+					
+
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn" type="submit">
+							Login
+						</button>
+					</div>
+
+					<ul class="login-more p-t-190">
+						<li class="m-b-8">
+							<span class="txt1">
+								Forgot
+							</span>
+
+							<a href="#" class="txt2">
+								Username / Password?
+							</a>
+						</li>
+
+						<li>
+							<span class="txt1">
+								Don’t have an account?
+							</span>
+
+							<a href="#" class="txt2">
+								Sign up
+							</a>
+						</li>
+					</ul>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
+<!--===============================================================================================-->
+	<script>
+		function Validation()
+		{
+			var text=document.getElementById("username").value;
+			var regx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+			if(regx.test(text))
+			{
+				document.getElementById("lbltext").innerHTML="Valid";
+				document.getElementById("lbltext").style.visibility="visible";
+				document.getElementById("lbltext").style.color="green";
+				return true
+			}
+			else
+			{
+				document.getElementById("lbltext").innerHTML="Invalid Username";
+				document.getElementById("lbltext").style.visibility="visible";
+				document.getElementById("lbltext").style.color="red";
+				return false
+			}
+			var text2=document.getElementById("password").value;
+			var regxx=/^(?=.\d)(?=.[a-z])(?=.[A-Z])(?=.[a-zA-Z]).{8,}$/;
+			if(regxx.test(text2)){
+				document.getElementById("message").innerHTML="Valid";
+				document.getElementById("message").style.visibility="visible";
+				document.getElementById("message").style.color="green";
+				return true
+			}
+			else{
+				document.getElementById("message").innerHTML="Invalid password";
+				document.getElementById("message").style.visibility="visible";
+				document.getElementById("message").style.color="red";
+				return false
+			}
+		}
+
+	</script>
+</body>
+</html>
